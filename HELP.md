@@ -13,3 +13,4 @@ The following guides illustrate how to use some features concretely:
 
 * [Accessing Data with JPA](https://spring.io/guides/gs/accessing-data-jpa/)
 
+More GitHub variables [GitHub Pages](https://docs.github.com/en/actions/learn-github-actions/variables/).
