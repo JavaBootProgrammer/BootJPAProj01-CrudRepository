@@ -1,4 +1,4 @@
-name: Test with Oracle DB
+name: Test with MYSQL Actions
 on: [push, pull_request]
 jobs:
   oracle-db-free:
