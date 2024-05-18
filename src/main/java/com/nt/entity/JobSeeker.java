@@ -16,13 +16,13 @@ public class JobSeeker {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "JS_ID")
-	private Integer jsId;
+	private Integer jobSeekerID;
 	@Column(name = "JS_NAME", length = 20)
-	private String jsName;
+	private String jobSeekerName;
 	@Column(name = "JS_QLFY", length = 20)
-	private String qlfy;
+	private String jobSeekerQualification;
 	@Column(name = "JS_PERCENTAGE")
-	private Float percentage;
+	private Float jobSeekerPercentage;
 	@Column(name = "JS_CONTACT_INFO")
 	private Long mobileNo;
 
