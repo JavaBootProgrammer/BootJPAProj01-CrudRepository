@@ -4,7 +4,8 @@
 
 # **Code**
 
-```package com.nt;
+```Java
+package com.nt;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -20,7 +21,7 @@ public class BootJpaProj01CrudRepositoryApplication {
 ```
 
 
-```//Entity class
+```Java
 package com.nt.entity;
 
 import jakarta.persistence.Column;
@@ -51,7 +52,7 @@ public class JobSeeker {
 }
 ```
 
-``` # MY SQL
+```Java
 spring.jpa.hibernate.ddl-auto=update
 spring.datasource.url=jdbc:mysql://localhost:3306/retail_store
 spring.datasource.username=root
