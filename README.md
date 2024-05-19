@@ -5,7 +5,7 @@
 # **Code**
 
 ```Java
-package com.nt;
+package com.jobs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,16 +13,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class BootJpaProj01CrudRepositoryApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(BootJpaProj01CrudRepositoryApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(BootJpaProj01CrudRepositoryApplication.class, args);
+    }
 
 }
 ```
 
-
 ```Java
-package com.nt.entity;
+package com.jobs.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -36,18 +35,18 @@ import lombok.Data;
 @Table(name = "JOB_SEEKER_INFO")
 @Data
 public class JobSeeker {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "JS_ID")
-	private Integer jobSeekerID;
-	@Column(name = "JS_NAME", length = 20)
-	private String jobSeekerName;
-	@Column(name = "JS_QLFY", length = 20)
-	private String jobSeekerQualification;
-	@Column(name = "JS_PERCENTAGE")
-	private Float jobSeekerPercentage;
-	@Column(name = "JS_CONTACT_INFO")
-	private Long mobileNo;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "JS_ID")
+    private Integer jobSeekerID;
+    @Column(name = "JS_NAME", length = 20)
+    private String jobSeekerName;
+    @Column(name = "JS_QLFY", length = 20)
+    private String jobSeekerQualification;
+    @Column(name = "JS_PERCENTAGE")
+    private Float jobSeekerPercentage;
+    @Column(name = "JS_CONTACT_INFO")
+    private Long mobileNo;
 
 }
 ```
