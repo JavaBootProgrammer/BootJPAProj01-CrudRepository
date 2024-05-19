@@ -63,7 +63,7 @@ spring.datasource.hikari.minimum-idle=10
 spring.datasource.hikari.maximum-pool-size=1000
 ```
 
-
+## **_POM_**
 ```xml
 <dependencies>
 		<dependency>
