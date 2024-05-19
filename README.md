@@ -61,8 +61,55 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 spring.jpa.show-sql=true
 spring.datasource.hikari.minimum-idle=10
 spring.datasource.hikari.maximum-pool-size=1000
+```
+
+
+```xml
+<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.mysql</groupId>
+			<artifactId>mysql-connector-j</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.oracle.database.jdbc</groupId>
+			<artifactId>ojdbc11</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+    <build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 ```
+
+
 # **Logs**
 
 ```2024-05-18T21:00:26.895-04:00  INFO 313746 --- [BootJpaProj01-CrudRepository] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
