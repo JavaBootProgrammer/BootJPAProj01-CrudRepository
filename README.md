@@ -106,7 +106,6 @@ spring.datasource.hikari.maximum-pool-size=1000
 			</plugin>
 		</plugins>
 	</build>
-
 ```
 
 
