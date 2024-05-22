@@ -108,17 +108,21 @@ spring.datasource.hikari.maximum-pool-size=1000
 	</build>
 ```
 
-
-# **Logs**
-
-```2024-05-18T21:00:26.895-04:00  INFO 313746 --- [BootJpaProj01-CrudRepository] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+## **_Logs_**
+```
 [BootJpaProj01-CrudRepository] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@594131f2
 [BootJpaProj01-CrudRepository] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
 [BootJpaProj01-CrudRepository] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
 [BootJpaProj01-CrudRepository] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
 [BootJpaProj01-CrudRepository] [           main] n.BootJpaProj01CrudRepositoryApplication : Started BootJpaProj01CrudRepositoryApplication in 2.251 seconds (process running for 2.568)
 [BootJpaProj01-CrudRepository] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'``````
+```
 
-# **JPA Created Tables**
+## **Tables created**
 
-![JOB SEEKER](/resource/JOB_SEEKER_INFO.png)
+![JOB_SEEKER_INFO_SEQ](resource/JOB_SEEKER_INFO.png)
+
+![JOB_SEEKER_INFO_SEQ](resource/JOB_SEEKER_INFO_SEQ.png)
+
+
+
