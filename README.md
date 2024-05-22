@@ -120,6 +120,5 @@ spring.datasource.hikari.maximum-pool-size=1000
 [BootJpaProj01-CrudRepository] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'``````
 
 # **JPA Created Tables**
-![UML](resource/JOB_SEEKER_INFO.png)
 
-![UML](resource/JOB_SEEKER_INFO_SEQ.png)
+![JOB SEEKER](/resource/JOB_SEEKER_INFO.png)
