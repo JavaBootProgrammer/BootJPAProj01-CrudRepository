@@ -5,6 +5,8 @@ import com.job.entity.JobSeeker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
+
 @Service("jsService")
 public class JobSeekerMgmtServiceImpl implements IJobSeekerMgmtService {
     @Autowired
@@ -12,9 +14,10 @@ public class JobSeekerMgmtServiceImpl implements IJobSeekerMgmtService {
 
     @Override
     public String register(JobSeeker js) {
-		/*	System.out.println("jsRepo  obj class name(InMemory Proxy class name)::"+jsRepo.getClass());
-			System.out.println("Proxy class implemented interfaces::"+Arrays.toString(jsRepo.getClass().getInterfaces()));
-			System.out.println("Proxy class methods::"+Arrays.toString(jsRepo.getClass().getDeclaredMethods()));*/
+
+			System.out.println("jsRepo  obj class name(InMemory Proxy class name)::"+jsRepo.getClass());
+			System.out.println("Proxy class implemented interfaces::"+ Arrays.toString(jsRepo.getClass().getInterfaces()));
+			System.out.println("Proxy class methods::"+Arrays.toString(jsRepo.getClass().getDeclaredMethods()));
 
 
         //save the object
