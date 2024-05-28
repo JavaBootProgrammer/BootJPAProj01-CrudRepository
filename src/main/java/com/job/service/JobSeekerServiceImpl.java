@@ -23,7 +23,7 @@ public class JobSeekerServiceImpl implements IJobSeekerService {
         //save the object
         JobSeeker savedJs = jobSeekerRepository.save(js);
 
-        return "Job Seeker  obj saved(record inserted)  having the id value ::" + savedJs.getJsId();
+        return "Job Seeker  obj saved(record inserted)  having the id value ::" + savedJs.getJobSeekerID();
     }
 
     @Override
@@ -82,12 +82,12 @@ public class JobSeekerServiceImpl implements IJobSeekerService {
 
     @Override
     public String registerOrUpdateJobSeeker(JobSeeker js) {
-        Optional<JobSeeker> opt = jobSeekerRepository.findById(js.getJsId());
+        Optional<JobSeeker> opt = jobSeekerRepository.findById(js.getJobSeekerID());
         if (opt.isPresent()) {
-            int idVal = jobSeekerRepository.save(js).getJsId();
+            int idVal = jobSeekerRepository.save(js).getJobSeekerID();
             return idVal + " JobSeeker is updated";
         } else {
-            int idVal = jobSeekerRepository.save(js).getJsId();
+            int idVal = jobSeekerRepository.save(js).getJobSeekerID();
             return idVal + " JobSeeker is inserted";
         }
     }
@@ -97,7 +97,7 @@ public class JobSeekerServiceImpl implements IJobSeekerService {
         Optional<JobSeeker> opt = jobSeekerRepository.findById(id);
         if (opt.isPresent()) {
             JobSeeker js = opt.get();
-            js.setMobileNo(newMobileNo);
+            js.setJobSeekerMobileNo(newMobileNo);
             jobSeekerRepository.save(js);
             return id + " JobSeeker is updated";
         }
@@ -116,12 +116,12 @@ public class JobSeekerServiceImpl implements IJobSeekerService {
 
     @Override
     public String removeJobSeeker(JobSeeker js) {
-        Optional<JobSeeker> opt = jobSeekerRepository.findById(js.getJsId());
+        Optional<JobSeeker> opt = jobSeekerRepository.findById(js.getJobSeekerID());
         if (opt.isPresent()) {
             jobSeekerRepository.delete(js);
-            return js.getJsId() + "  JobSeeker is deleted";
+            return js.getJobSeekerID() + "  JobSeeker is deleted";
         }
-        return js.getJsId() + " jobseeker is not found";
+        return js.getJobSeekerID() + " jobseeker is not found";
     }
 
 

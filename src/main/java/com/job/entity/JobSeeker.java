@@ -11,7 +11,6 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Transient;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 
@@ -27,30 +26,28 @@ public class JobSeeker {
 	@GeneratedValue(generator = "gen1",strategy = GenerationType.SEQUENCE)
 	//@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="JS_ID")
-	private Integer jsId;
+	private Integer jobSeekerID;
 
 	@Column(name="JS_NAME",length =20)
 	@NonNull
-	private  String  jsName;
+	private  String jobsSeekerName;
 
 	@Column(name="JS_QLFY",length =20)
 	@NonNull
-	private   String  qlfy;
+	private   String jobSeekerQualification;
 
 	@Column(name="JS_PERCENTAGE")
 	@NonNull
-	private   Float   percentage;
+	private   Float JobSeekerPercentage;
 
 	@Transient
 	@Column(name="JS_CONTACT_INFO")
 	@NonNull
-	private   Long    mobileNo;
+	private   Long jobSeekerMobileNo;
 
 	public JobSeeker() {
 		System.out.println("JobSeeker:: 0-param constructor::"+this.hashCode());
 	}
-
-
 
 }
 

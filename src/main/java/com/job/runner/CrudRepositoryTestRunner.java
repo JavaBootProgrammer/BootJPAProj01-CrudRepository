@@ -38,8 +38,8 @@ public class CrudRepositoryTestRunner implements CommandLineRunner {
     private void removeJobSeeker() {
         try {
             JobSeeker js = new JobSeeker();
-            js.setJsId(2);
-            js.setMobileNo(9999999L);
+            js.setJobSeekerID(2);
+            js.setJobSeekerMobileNo(9999999L);
             String msg = jsService.removeJobSeeker(js);
             System.out.println(msg);
         } catch (Exception e) {
