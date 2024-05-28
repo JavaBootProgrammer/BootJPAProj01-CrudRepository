@@ -11,7 +11,7 @@ import java.util.Optional;
 @Service("jsService")
 public class JobSeekerServiceImpl implements IJobSeekerService {
     @Autowired
-    private IJobSeekerRepository jsRepo;
+    private IJobSeekerRepository jobSeekerRepository;
 
     @Override
     public String register(JobSeeker js) {
@@ -21,41 +21,40 @@ public class JobSeekerServiceImpl implements IJobSeekerService {
 
 
         //save the object
-        JobSeeker savedJs = jsRepo.save(js);
+        JobSeeker savedJs = jobSeekerRepository.save(js);
 
         return "Job Seeker  obj saved(record inserted)  having the id value ::" + savedJs.getJsId();
     }
 
     @Override
-    public boolean isJobSeekerExists(int id) {
-        boolean flag = jsRepo.existsById(id);
-        return flag;
+    public boolean isJobSeekerExists(int jobSeekerID) {
+        return jobSeekerRepository.existsById(jobSeekerID);
     }
 
     @Override
     public long getJobSeekersCount() {
-        return jsRepo.count();
+        return jobSeekerRepository.count();
     }
 
     @Override
     public Iterable<JobSeeker> getAllJobSeekers() {
-        return jsRepo.findAll();
+        return jobSeekerRepository.findAll();
     }
 
     @Override
     public Iterable<JobSeeker> getJobSeekersByIds(Iterable<Integer> ids) {
 
-        return jsRepo.findAllById(ids);
+        return jobSeekerRepository.findAllById(ids);
     }
 
    @Override
     public Optional<JobSeeker> getJobSeekerById(int id) {
-        return   jsRepo.findById(id);
+        return   jobSeekerRepository.findById(id);
     }
 
     @Override
     public String showJobSeekerById(int id) {
-        Optional<JobSeeker> opt = jsRepo.findById(id);
+        Optional<JobSeeker> opt = jobSeekerRepository.findById(id);
         if (opt.isEmpty())
             return "Record not found";
         else
@@ -65,13 +64,13 @@ public class JobSeekerServiceImpl implements IJobSeekerService {
 
     @Override
     public JobSeeker fetchJobSeekerById(int id) {
-        JobSeeker js = jsRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("invalid id"));
+        JobSeeker js = jobSeekerRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("invalid id"));
         return js;
     }
 
     @Override
     public JobSeeker findJobSeekerById(int id) {
-        return jsRepo.findById(id).orElse(new JobSeeker("freelancer", "freelancer work", 0.0f, 000000L));
+        return jobSeekerRepository.findById(id).orElse(new JobSeeker("freelancer", "freelancer work", 0.0f, 000000L));
 
     }
 
@@ -83,23 +82,23 @@ public class JobSeekerServiceImpl implements IJobSeekerService {
 
     @Override
     public String registerOrUpdateJobSeeker(JobSeeker js) {
-        Optional<JobSeeker> opt = jsRepo.findById(js.getJsId());
+        Optional<JobSeeker> opt = jobSeekerRepository.findById(js.getJsId());
         if (opt.isPresent()) {
-            int idVal = jsRepo.save(js).getJsId();
-            return idVal + " JobSeeker is  updated";
+            int idVal = jobSeekerRepository.save(js).getJsId();
+            return idVal + " JobSeeker is updated";
         } else {
-            int idVal = jsRepo.save(js).getJsId();
-            return idVal + " JobSeeker is  inserted";
+            int idVal = jobSeekerRepository.save(js).getJsId();
+            return idVal + " JobSeeker is inserted";
         }
     }
 
     @Override
     public String updateJobSeekerInfoById(int id, long newMobileNo) {
-        Optional<JobSeeker> opt = jsRepo.findById(id);
+        Optional<JobSeeker> opt = jobSeekerRepository.findById(id);
         if (opt.isPresent()) {
             JobSeeker js = opt.get();
             js.setMobileNo(newMobileNo);
-            jsRepo.save(js);
+            jobSeekerRepository.save(js);
             return id + " JobSeeker is updated";
         }
         return id + " JobSeeker is not found";
@@ -107,9 +106,9 @@ public class JobSeekerServiceImpl implements IJobSeekerService {
 
     @Override
     public String removeJobSeekerById(int id) {
-        Optional<JobSeeker> opt = jsRepo.findById(id);
+        Optional<JobSeeker> opt = jobSeekerRepository.findById(id);
         if (opt.isPresent()) {
-            jsRepo.deleteById(id);
+            jobSeekerRepository.deleteById(id);
             return id + " JobSeeker is deleted";
         }
         return id + " JobSeeker is not found for deletion";
@@ -117,9 +116,9 @@ public class JobSeekerServiceImpl implements IJobSeekerService {
 
     @Override
     public String removeJobSeeker(JobSeeker js) {
-        Optional<JobSeeker> opt = jsRepo.findById(js.getJsId());
+        Optional<JobSeeker> opt = jobSeekerRepository.findById(js.getJsId());
         if (opt.isPresent()) {
-            jsRepo.delete(js);
+            jobSeekerRepository.delete(js);
             return js.getJsId() + "  JobSeeker is deleted";
         }
         return js.getJsId() + " jobseeker is not found";
@@ -128,21 +127,21 @@ public class JobSeekerServiceImpl implements IJobSeekerService {
 
     @Override
     public String removeAllJobSeekers() {
-        long count = jsRepo.count();
+        long count = jobSeekerRepository.count();
         if (count == 0)
             return "records not found ";
         else {
-            jsRepo.deleteAll();
+            jobSeekerRepository.deleteAll();
             return count + " no.of records are deleted";
         }
     }
 
     @Override
     public String removeJobSeekersByIds(Iterable<Integer> ids) {
-        Iterable<JobSeeker> it = jsRepo.findAllById(ids);
+        Iterable<JobSeeker> it = jobSeekerRepository.findAllById(ids);
         List<JobSeeker> list = (List<JobSeeker>) it;
         int count = list.size();
-        jsRepo.deleteAllById(ids);
+        jobSeekerRepository.deleteAllById(ids);
 
         return count + " no.of records are found and deleted ";
     }
