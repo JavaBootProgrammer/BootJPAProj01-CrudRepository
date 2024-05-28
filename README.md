@@ -1,5 +1,5 @@
 # BootJpaProj01-CrudRepository
-![UML](resource/JPA.png)
+![UML](src/main/resources/JPA.png)
 
 
 # **Code**
@@ -120,9 +120,16 @@ Job Seeker  obj saved(record inserted)  having the id value ::1002
 
 ## **Tables created**
 
-![JOB_SEEKER_INFO_SEQ](resource/JOB_SEEKER_INFO.png)
+![UML](src/main/resources/UML.png)
 
-![JOB_SEEKER_INFO_SEQ](resource/JOB_SEEKER_INFO_SEQ.png)
+![JOB_SEEKER_INFO_SEQ](src/main/resources/JOB_SEEKER_INFO_SEQ.png)
+
+![JOB_SEEKER_INFO](src/main/resources/JOB_SEEKER_INFO.png)
+
+![img](src/main/resources/img.png)
+
+![JPA](src/main/resources/JPA.png)
+
 
 
 
