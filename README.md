@@ -51,7 +51,7 @@ public class JobSeeker {
 }
 ```
 
-```Java
+```properties
 spring.jpa.hibernate.ddl-auto=update
 spring.datasource.url=jdbc:mysql://localhost:3306/retail_store
 spring.datasource.username=root
